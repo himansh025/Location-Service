@@ -30,7 +30,6 @@ public class LocationController {
     @PostMapping
     ResponseEntity<?> postLocation(@RequestBody SaveDriverLocationRequestDto saveDriverLocationRequestDto) {
         try {
-
             Boolean response= locationService.saveDriverLocation(saveDriverLocationRequestDto.getDriverId(),saveDriverLocationRequestDto.getLatitude(),saveDriverLocationRequestDto.getLongitude());
             return new ResponseEntity<>(response, HttpStatus.CREATED);
         }catch(Exception e){
@@ -39,9 +38,7 @@ public class LocationController {
         }
     }
 
-    @GetMapping("/nearby/driver")
-
-
+    @PostMapping("/nearby/driver")
     ResponseEntity<List<DriverLocationDto>> nearbyDriver(@RequestBody NearbyDriverRequestDto nearbyDriverRequestDto) {
         try {
         List<DriverLocationDto>response= locationService.getNearByDriver(nearbyDriverRequestDto.getLatitude(),nearbyDriverRequestDto.getLongitude());

@@ -8,7 +8,6 @@ import lombok.*;
 @AllArgsConstructor
 @Builder
 public class DriverLocationDto {
-
     String driverId;
     Double latitude;
     Double longitude;

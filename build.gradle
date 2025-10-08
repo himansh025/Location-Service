@@ -1,8 +1,7 @@
 plugins {
 	id 'java'
-	id 'org.springframework.boot' version '4.0.0-SNAPSHOT'
+	id 'org.springframework.boot' version '3.3.4'
 	id 'io.spring.dependency-management' version '1.1.7'
-	id 'maven-publish'
 }
 
 group = 'com.example'
@@ -37,10 +36,10 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'io.projectreactor:reactor-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-	implementation 'com.example:Uber-Entity:0.0.2-SNAPSHOT'
+	implementation 'com.example:Uber-Entity:0.0.3-SNAPSHOT'
 	implementation 'redis.clients:jedis:6.1.0'
 	implementation 'org.springframework.boot:spring-boot-starter-data-redis'
-
+	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:4.1.1'
 }
 
 tasks.named('test') {
